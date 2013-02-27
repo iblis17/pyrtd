@@ -107,7 +107,7 @@ class RTDClient(object):
         Topics can be strings or a tuple of strings.
 
         """
-        if isinstance(topic, string):
+        if isinstance(topic, str):
             topic=(topic,)
 
         if topic not in self._topic_to_id:
