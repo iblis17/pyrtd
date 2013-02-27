@@ -104,7 +104,11 @@ class RTDClient(object):
         Registers a topic with the RTD server. The topic's value
         will be updated in subsequent data refreshes.
 
+        Topics can be strings or a tuple of strings.
+
         """
+        if isinstance(topic, string):
+            topic=(topic,)
 
         if topic not in self._topic_to_id:
             id = self._last_topic_id
@@ -113,7 +117,7 @@ class RTDClient(object):
             self._topic_to_id[topic] = id
             self._id_to_topic[id] = topic
 
-            self._rtd.ConnectData(id, (topic,), True)
+            self._rtd.ConnectData(id, topic, True)
 
     # Implementation of IRTDUpdateEvent.
     HeartbeatInterval = -1
