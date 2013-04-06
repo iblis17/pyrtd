@@ -4,11 +4,11 @@ from win32com import client, universal
 from win32com.server.util import wrap
 
 # Thanks to Chris Nilsson for these constants.
-# Typelib info for Excel 2007.
+# Typelib info for Excel 20??.
 EXCEL_TLB_GUID = '{00024500-0000-0000-C000-000000000046}'
 EXCEL_TLB_LCID = 0
 EXCEL_TLB_MAJOR = 1
-EXCEL_TLB_MINOR = 0
+EXCEL_TLB_MINOR = 5
 
 # Register the two RTD interfaces defined in the Excel typelib.
 print "Trying CLSID:", EXCEL_TLB_GUID
