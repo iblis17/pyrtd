@@ -5,21 +5,16 @@ from win32com.server.util import wrap
 
 # Thanks to Chris Nilsson for these constants.
 # Typelib info for Excel 2007.
-EXCEL_TLB_GUID = ['{00024500-0000-0000-C000-000000000046}','{00020813-0000-0000-C000-000000000046}']
+EXCEL_TLB_GUID = '{00024500-0000-0000-C000-000000000046}'
 EXCEL_TLB_LCID = 0
 EXCEL_TLB_MAJOR = 1
 EXCEL_TLB_MINOR = 6
 
 # Register the two RTD interfaces defined in the Excel typelib.
-for CLSID in EXCEL_TLB_GUID:
-    try:
-        print "Trying CLSID:", CLSID
-        universal.RegisterInterfaces(CLSID, 
-                             EXCEL_TLB_LCID, EXCEL_TLB_MAJOR, EXCEL_TLB_MINOR,
-                             ['IRtdServer','IRTDUpdateEvent'])
-        break
-    except:
-        pass
+print "Trying CLSID:", CLSID
+universal.RegisterInterfaces(CLSID, 
+     EXCEL_TLB_LCID, EXCEL_TLB_MAJOR, EXCEL_TLB_MINOR,
+     ['IRtdServer','IRTDUpdateEvent'])
 
 MAX_REGISTERED_TOPICS = 1024
 
