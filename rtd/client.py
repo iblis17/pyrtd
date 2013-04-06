@@ -8,10 +8,14 @@ from win32com.server.util import wrap
 EXCEL_TLB_GUID = '{00024500-0000-0000-C000-000000000046}'
 EXCEL_TLB_LCID = 0
 EXCEL_TLB_MAJOR = 1
-EXCEL_TLB_MINOR = 4
+EXCEL_TLB_MINOR = 0
 
 # Register the two RTD interfaces defined in the Excel typelib.
 print "Trying CLSID:", EXCEL_TLB_GUID
+print "Trying LCID:", EXCEL_TLB_LCID
+print "Trying MAJOR:", EXCEL_TLB_MAJOR
+print "Trying MINOR:", EXCEL_TLB_MINOR
+
 universal.RegisterInterfaces(EXCEL_TLB_GUID, 
      EXCEL_TLB_LCID, EXCEL_TLB_MAJOR, EXCEL_TLB_MINOR,
      ['IRtdServer','IRTDUpdateEvent'])
