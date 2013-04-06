@@ -12,7 +12,7 @@ EXCEL_TLB_MINOR = 6
 
 # Register the two RTD interfaces defined in the Excel typelib.
 print "Trying CLSID:", EXCEL_TLB_GUID
-universal.RegisterInterfaces(CLSID, 
+universal.RegisterInterfaces(EXCEL_TLB_GUID, 
      EXCEL_TLB_LCID, EXCEL_TLB_MAJOR, EXCEL_TLB_MINOR,
      ['IRtdServer','IRTDUpdateEvent'])
 
