@@ -13,12 +13,14 @@ EXCEL_TLB_MINOR = 6
 # Register the two RTD interfaces defined in the Excel typelib.
 for CLSID in EXCEL_TLB_GUID:
     try:
+        print "Trying CLSID:", CLSID
         universal.RegisterInterfaces(CLSID, 
                              EXCEL_TLB_LCID, EXCEL_TLB_MAJOR, EXCEL_TLB_MINOR,
                              ['IRtdServer','IRTDUpdateEvent'])
         break
     except:
         pass
+
 MAX_REGISTERED_TOPICS = 1024
 
 class RTDClient(object):
