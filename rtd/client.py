@@ -8,7 +8,7 @@ from win32com.server.util import wrap
 EXCEL_TLB_GUID = '{00024500-0000-0000-C000-000000000046}'
 EXCEL_TLB_LCID = 0
 EXCEL_TLB_MAJOR = 1
-EXCEL_TLB_MINOR = 6
+EXCEL_TLB_MINOR = 4
 
 # Register the two RTD interfaces defined in the Excel typelib.
 print "Trying CLSID:", EXCEL_TLB_GUID
